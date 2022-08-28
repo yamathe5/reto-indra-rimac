@@ -1,0 +1,42 @@
+@use '../../../styles/breakpoints' as u;
+
+.arma_tu_plan--user_card{
+  margin-top: 2.4rem;
+  height: 17rem;
+  width: 100%;
+  min-width: 30rem;
+  max-width: 38rem;
+  display: grid;
+  grid-template:  25% 1fr auto 1fr 25%/ 8%  1fr 1fr 1fr  8% ;
+  border-radius: 1.2rem;
+  background-color: white;
+
+  @include u.breakpoint(large){
+    margin-top: 4.4rem;
+    border: 3px solid #F0F2FA;
+    border-radius: 12px;
+  }
+  img {
+    align-self: flex-end;
+    grid-row: 1/6;
+    grid-column: 4/5;
+  }
+  p {
+    grid-row: 2/3;
+    grid-column: 2/4;
+    font-family: 'Roboto';
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: 0.20px;
+  }
+  h3 {
+    grid-row: 3/4;
+    grid-column: 2/4;
+    font-family: 'Lato';
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.8rem;
+    letter-spacing: 0rem;
+  }
+}
