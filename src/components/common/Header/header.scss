@@ -1,0 +1,50 @@
+@use "../../../styles/breakpoints" as u;
+
+.header {
+  min-width: 36rem;
+  width: 100%;
+  display: grid;
+  grid: 20px auto 20px / 9% auto 9%;
+  background-color: transparent;
+
+  @include u.breakpoint(xlarge){
+    grid: 20px auto 20px / auto 114rem auto;
+  }
+  &-container{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {
+      width: 92px;
+      height: 16px;
+    }
+    &-links{
+      display: flex;
+      align-items: center;
+    }
+    &__phone--phone-view {
+      display: flex;
+      align-items: center;
+    
+      @include u.breakpoint(large){
+        display: none;
+      }
+     
+    }
+    &__phone--dektop-view {
+      display: none;
+  
+      @include u.breakpoint(large){
+        display: flex;
+      }
+      img {
+        margin-left: 2.4rem;
+      }
+    }
+  }
+}
+
+
+
