@@ -1,0 +1,92 @@
+@use "../../../styles/breakpoints" as u;
+
+.form-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid: auto 1fr / 9% auto 9%;
+  @include u.breakpoint(small){
+    justify-items: center;
+  }
+  @include u.breakpoint(large){
+    grid: auto 1fr / 27% auto ;
+    grid-row: 2/3;
+    grid-column: 3/4;
+    justify-items: left;
+  }
+
+  &__description {
+    grid-column: 2/3;
+    margin-bottom: 2.4rem;
+  }
+  
+  .form{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-bottom: 4rem;
+  
+    &__input-container{
+      width: 100%;
+      max-width: 48rem;
+      height: auto;
+      margin-bottom: 1.6rem;
+      @include u.breakpoint(large){
+        max-width: 29rem;
+      }
+    }
+  
+    &__submit{
+      width: 100%;
+      max-width: 48rem;
+      height: 5.6rem;
+      border: none;
+    }
+    &__select{
+      width: 33%;
+      height: 5.6rem;
+      border-radius: 0.4rem 0 0 0.4rem;
+      padding: 1.6rem;
+      background-color: transparent;
+      border: 1.00694px solid #C5CBE0;
+      border-right: none;
+    }
+    &__document {
+      width: 67%;
+      height: 5.6rem;
+      border: none;
+      background-color: transparent;
+      border: 1.00694px solid #C5CBE0;
+      border-radius:  0 0.4rem 0.4rem 0 ;
+      padding: 1.6rem;
+    }
+    &__phone{
+      width: 100%;
+      max-width: 48rem;
+      height: 5.6rem;
+      border-radius: 0.4rem;
+      border: none; 
+      background-color: transparent;
+      border: 1.00694px solid #C5CBE0;
+      padding: 1.6rem;
+    } 
+    &__placa{
+      width: 100%;
+      max-width: 48rem;
+      height: 5.6rem;
+      border-radius: 0.4rem;
+      border: none; 
+      background-color: transparent;
+      border: 1.00694px solid #C5CBE0;
+      padding: 1.6rem;
+    }
+    &__check {
+      filter: hue-rotate(240deg);
+      transform: scale(1.5);
+      border-radius: 0.4rem;
+      cursor: pointer;
+    }
+  }
+  
+  
+}
+
