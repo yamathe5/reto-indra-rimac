@@ -1,0 +1,74 @@
+@use '../../styles/breakpoints' as u;
+
+.main-arma-tu-plan{
+  min-width: 36rem;
+  border-top: 1px solid #E4E8F7;
+  @include u.breakpoint(large){
+    height: 100%;
+    padding-top: 6rem;
+    justify-content: center;
+  }
+
+}
+
+.arma-tu-plan {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  justify-content: center;
+  display: grid;
+  grid-template: auto auto auto auto / 9% auto 9%; 
+  margin-left: 9%;
+  @include u.breakpoint(large){
+    grid-template: auto auto auto auto /26% 1fr 1fr;
+    width: 82%;
+  }
+  @include u.breakpoint(xlarge){
+    margin-left: auto;
+    margin-right: auto;
+    width: 114rem;
+  }
+  
+}
+
+.arma-tu-plan__user-card-container {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  box-shadow: 300px 0px #F7F8FC, -300px 0px #F7F8FC;
+  -webkit-box-shadow:  300px 0px #F7F8FC, -300px 0px #F7F8FC;
+  -moz-box-shadow: 300px 0px #F7F8FC, -300px 0px #F7F8FC;
+  background-color: #F7F8FC;
+  max-width: 38rem;
+  padding-bottom: 5.6rem;
+  @include u.breakpoint(large){
+    padding-top: 0;
+    box-shadow: none;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: #FFFFFF;
+  }
+  button{
+    display: none;
+    @include u.breakpoint(large){
+      display: inline-block;
+    }
+  }
+
+  > span{
+    display: none;
+    @include u.breakpoint(large){
+      display: inline-block;
+    }
+  }
+}
+
+.coberturas-container {
+  max-width: 38rem;
+  grid-column: 2/3;
+  grid-row: 4/5;
+  @include u.breakpoint(large){
+    margin-top: 5.5rem;
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+}
+
