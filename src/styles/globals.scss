@@ -36,23 +36,16 @@ $gray-500: #494F66;
 .gray-500 {
   color: $gray-500;
 }
+.purple-500 {
+  color: $purple-color;
+}
 
 .green-300{
   color: #389E0D;
 
 }
 
-// font-weight
 
-.font-300{
- font-weight: 300;
-}
-.font-400{
- font-weight: 400;
-}
-.font-700{
- font-weight: 700;
-}
 
 //@at-root
 
@@ -60,7 +53,9 @@ $gray-500: #494F66;
   margin-top: 2.4rem;
 }
 
-
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
 
 // Text
   // Headlines
@@ -160,3 +155,15 @@ $gray-500: #494F66;
 .text-center{
   text-align: center;
 }
+
+// font-weight
+
+.font-300{
+  font-weight: 300;
+ }
+ .font-400{
+  font-weight: 400;
+ }
+ .font-700{
+  font-weight: 700;
+ }
