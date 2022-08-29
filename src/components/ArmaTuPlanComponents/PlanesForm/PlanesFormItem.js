@@ -41,7 +41,7 @@ export default function Cobertura (
         <h4 className="headline-xxs">{title}</h4>
         <ToggleSwitch checked={selected} handleOnClickChangePrice={selected ? decreasePrice : increasePrice}/> 
         <div className="cobertura__info text-md">
-          { readMoreReadLess ? text : "" }
+          { readMoreReadLess ? <p className="roboto text-md gray-300">{text}</p>  : "" }
         </div>
         <ReadMoreReadLess setReadMoreReadLess={setReadMoreReadLess} readMoreReadLess={readMoreReadLess}/>
       </div>
