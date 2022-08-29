@@ -6,9 +6,10 @@ import formValidation from '../../utilis';
 
 /* Styles */
 import "./loginForm.scss"
-
+import { useAuth } from '../../../context/auth-context';
 
 export default function LoginForm() {
+  const { login } = useAuth();
 
   const [check, setCheck] = React.useState(false);
   const [documentType, setDocumentType] = React.useState("DNI");
@@ -44,12 +45,19 @@ export default function LoginForm() {
       console.error("No se ingreso algun dato de manera correcta")
       return
     }
+    let credentials = {
+      documentType:documentType.value, 
+      documentNumber:documentNumber.value, 
+      phone:phone.value, 
+      placa:placa.value
+    }
 
+    login(credentials).catch((error)=>console.log(error));
   }
   return (
     <>
     
-      <h2 className="form-container__description headline-sm">Dejanos tus datos</h2>
+      <h2 className="form-container__description headline-sm gray-500">Dejanos tus datos</h2>
       <form className="form" onSubmit={handleSubmit}>
         
         <div className="form__input-container">
@@ -82,13 +90,13 @@ export default function LoginForm() {
 
         <div className="form__input-container">
           <label htmlFor="phone"></label>
-          <input pattern="[0-9]{9}" 
+          <input pattern="[0-9]{9}"
           maxLength={9}
-          value={phone} 
-          onChange={handlePhoneChange} c
-          className="form__phone" 
-          placeholder="Telefono" 
-          name="phone" 
+          value={phone}
+          onChange={handlePhoneChange}
+          className="form__phone"
+          placeholder="Telefono"
+          name="phone"
           type="phone" required/>
         </div>
 
@@ -104,13 +112,14 @@ export default function LoginForm() {
           type="text" required/>
         </div>
 
-        <div className="form__input-container flex align-center gap">
+        <div className="form__input-container flex align-center gap ">
           <input className="form__check" defaultChecked={check} 
           onChange={handleChange} 
+          id="check"
           name="check"
           type="checkbox" required/>
-          <label className="text-sm" htmlFor="check">
-            Acepto la Política de Protecciòn de Datos Personales y los Términos y Condiciones.</label>
+          <label className="text-sm roboto" htmlFor="check">
+            Acepto la <u className='font-400'>Política de Protecciòn de Datos Personales</u>  y los <u className='font-400'>Términos y Condiciones.</u></label>
         </div>
 
         <button className="form__submit button" type="submit">COTIZALO</button>

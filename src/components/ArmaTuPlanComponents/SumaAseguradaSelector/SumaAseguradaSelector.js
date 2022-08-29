@@ -9,9 +9,15 @@ const SUMA_ASEGURADA_VARIABLES = {
   INTERVAL: 100,
 }
 
+let dollarUS = Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0, 
+  minimumFractionDigits: 0, 
+});
 
-export default function SumaAseguradaSelector({ setInitialAmount, coberturasFormData, setCoberturasFormData }){  
-  const [sumaAsegurada, setSumaAsegurada] = React.useState(14500)
+
+export default function SumaAseguradaSelector({sumaAsegurada, setSumaAsegurada, setInitialAmount, coberturasFormData, setCoberturasFormData }){  
   
   function increaseSumaAsegurada(){
     setSumaAsegurada((prevsumaAsegurada) => { 
@@ -61,11 +67,11 @@ export default function SumaAseguradaSelector({ setInitialAmount, coberturasForm
   return (
   <div className="price-selector">
     <h3 className="headline-xxs">Indica la suma asegurada</h3>
-    <p className="text-sm">MIN_AMOUNT $12,500 | MAX_AMOUNT $16,500</p>
+    <p className="text-sm font-400 gray-300">MIN $12,500 | MAX $16,500</p>
 
     <div className="price-selector__buttons">
       <button onClick={decreaseSumaAsegurada}>-</button>
-      <p className="headline-xxs">$ {sumaAsegurada}</p>
+      <p className="headline-xxs">{(dollarUS.format(sumaAsegurada))}</p>
       <button onClick={increaseSumaAsegurada}>+</button>
     </div>
   </div>

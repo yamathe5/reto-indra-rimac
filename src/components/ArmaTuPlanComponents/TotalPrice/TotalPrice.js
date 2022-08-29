@@ -1,9 +1,14 @@
 import "./total-price.scss";
 
-export default function TotalPrice ({ initialAmount }){
+/* Auth context */
+import { useAuth } from "../../../context/auth-context";
+
+export default function TotalPrice ({sumaAsegurada, initialAmount, coberturasFormData }){
+
+  const {sendData} = useAuth()
 
   function handleSendData (){
-
+    sendData(sumaAsegurada, initialAmount, coberturasFormData)
   }
 
   return(

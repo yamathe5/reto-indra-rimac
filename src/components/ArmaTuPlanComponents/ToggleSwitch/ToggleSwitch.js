@@ -16,8 +16,8 @@ export default function ToggleSwitch({ handleOnClickChangePrice, checked }){
 
       <label className="switch-desktop">
         <input checked={checked} readOnly onClick={handleOnClickChangePrice} type="checkbox"/>
-        {checked ? <span><img src={less} alt="Less icon"/>QUITAR</span>: 
-                    <span><img src={plus} alt="Plus icon"/>AGREGAR</span>}
+        {checked ? <span className="font-700 purple-500"><img src={less} alt="Less icon"/>QUITAR</span>: 
+                    <span className="font-700 purple-500"><img src={plus} alt="Plus icon"/>AGREGAR</span>}
       </label>
     </>
   );

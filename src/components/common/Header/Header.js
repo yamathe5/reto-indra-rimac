@@ -15,9 +15,9 @@ export default function Header (){
       </div>
 
       <div className="header-container__phone--dektop-view">
-        <a className="header-container-links__help gray-300 text-md text-decoration-none" href="google.com" >Tienes alguna duda?</a>
+        <a className="header-container-links__help gray-300 text-md text-decoration-none roboto" href="google.com" >¿Tienes alguna duda?</a>
         <img src={Phone} alt="Phone"/>
-        <a className="purple-link text-md text-decoration-none"  href="google.com" >(01) 411 6001</a>
+        <a className="purple-link text-md text-decoration-none roboto"  href="google.com" >(01) 411 6001</a>
       </div>
 
     </div>
