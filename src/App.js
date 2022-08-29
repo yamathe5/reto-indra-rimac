@@ -1,15 +1,20 @@
 import './App.css';
-import ArmaTuPlanPage from './pages/ArmaTuPlanPage';
-import GraciasPage from './pages/GraciasPage';
+
 import LoginPage from './pages/LoginPage';
+
+import { useAuth } from './context/auth-context';
+import AuthenticatedApp from './AuthenticatedApp';
+
+
+
 import "./styles"
 
 function App() {
+  const { user } = useAuth();
+
   return (
     <div className="App">
-      {/* <LoginPage/> */}
-      <ArmaTuPlanPage/>
-      {/* <GraciasPage/> */}
+      { !user? <LoginPage/> : <AuthenticatedApp/>}
     </div>
   );
 }

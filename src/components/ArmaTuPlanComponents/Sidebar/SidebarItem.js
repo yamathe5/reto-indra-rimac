@@ -1,7 +1,11 @@
+import { useAuth } from "../../../context/auth-context"
+
 export default function SidebarItem (){
 
-  function handleLogout(){
+  const { logout } = useAuth()
 
+  function handleLogout(){
+    logout()
   }
 
   return (
@@ -15,7 +19,7 @@ export default function SidebarItem (){
       <div className="sidebar--desktop">
         <div>
           <button className="rounded-button" >1</button>
-          <p className="text-lg font-400" >Datos</p>
+          <p className="text-lg font-400 gray-100" >Datos</p>
         </div>
         <div>
           <button className="rounded-button__selected">2</button>
